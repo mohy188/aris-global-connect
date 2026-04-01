@@ -3,7 +3,7 @@ import { Mail, Globe, Phone, MapPin } from "lucide-react";
 const details = [
   { icon: Mail, label: "Email", value: "arisandcompany@icloud.com", href: "mailto:arisandcompany@icloud.com" },
   { icon: Globe, label: "Website", value: "www.arisandcompany.com", href: "https://www.arisandcompany.com" },
-  { icon: Phone, label: "Phone", value: "+92 306 9880662 | +92 300 1732959", href: "tel:+923069880662" },
+  { icon: Phone, label: "Phone", value: "+92 306 9880662\n+92 300 1732959", href: "tel:+923069880662" },
   { icon: MapPin, label: "Address", value: "Near Chinioti Gate, Chak Jhumra, Faisalabad, Pakistan", href: undefined },
 ];
 
