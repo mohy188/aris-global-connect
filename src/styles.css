@@ -89,11 +89,11 @@
   --sidebar-ring: oklch(0.7 0.04 250);
 
   /* Brand tokens */
-  --gold: oklch(0.78 0.16 75);
-  --gold-foreground: oklch(0.2 0.06 250);
-  --navy: oklch(0.2 0.06 250);
-  --navy-light: oklch(0.28 0.05 250);
-  --surface: oklch(0.97 0.003 250);
+  --gold: oklch(0.15 0 0);
+  --gold-foreground: oklch(1 0 0);
+  --navy: oklch(0.1 0 0);
+  --navy-light: oklch(0.2 0 0);
+  --surface: oklch(0.97 0 0);
 
   --font-heading: "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
