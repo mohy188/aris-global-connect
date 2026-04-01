@@ -8,20 +8,20 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-surface">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-foreground/50 mb-3">Our Services</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">What We Offer</h2>
+    <section id="services" className="py-28 bg-surface">
+      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <p className="text-[13px] font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">Our Services</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">What We Offer</h2>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-12">
           {services.map((s) => (
-            <div key={s.title} className="bg-card rounded-2xl p-8 shadow-sm border border-border hover:shadow-md hover:-translate-y-1 transition-all duration-300 group">
-              <div className="w-14 h-14 rounded-xl bg-navy flex items-center justify-center mb-6 group-hover:bg-foreground/80 transition-colors duration-300">
-                <s.icon className="w-7 h-7 text-primary-foreground" />
+            <div key={s.title} className="group">
+              <div className="w-12 h-12 border border-border flex items-center justify-center mb-6 group-hover:bg-foreground group-hover:text-background transition-all duration-300">
+                <s.icon className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-foreground mb-3">{s.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+              <h3 className="text-lg font-semibold text-foreground mb-3">{s.title}</h3>
+              <p className="text-muted-foreground leading-[1.8] text-[15px]">{s.desc}</p>
             </div>
           ))}
         </div>

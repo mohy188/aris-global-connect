@@ -9,26 +9,24 @@ const details = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 bg-background">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-foreground/50 mb-3">Contact Us</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Get in Touch</h2>
+    <section id="contact" className="py-28 bg-background">
+      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <p className="text-[13px] font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">Contact Us</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">Get in Touch</h2>
         </div>
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-8">
           {details.map((d) => (
-            <div key={d.label} className="flex items-start gap-4 bg-card rounded-xl p-6 border border-border">
-              <div className="w-10 h-10 rounded-lg bg-foreground/5 flex items-center justify-center shrink-0">
-                <d.icon className="w-5 h-5 text-foreground" />
-              </div>
+            <div key={d.label} className="flex items-start gap-5 p-6 border-b border-border">
+              <d.icon className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" />
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{d.label}</p>
+                <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-muted-foreground mb-2">{d.label}</p>
                 {d.href ? (
-                  <a href={d.href} className="text-foreground hover:text-foreground/70 transition-colors text-sm whitespace-pre-line" target={d.label === "Website" ? "_blank" : undefined} rel={d.label === "Website" ? "noopener noreferrer" : undefined}>
+                  <a href={d.href} className="text-foreground hover:text-muted-foreground transition-colors text-[15px] whitespace-pre-line" target={d.label === "Website" ? "_blank" : undefined} rel={d.label === "Website" ? "noopener noreferrer" : undefined}>
                     {d.value}
                   </a>
                 ) : (
-                  <p className="text-foreground text-sm">{d.value}</p>
+                  <p className="text-foreground text-[15px]">{d.value}</p>
                 )}
               </div>
             </div>
