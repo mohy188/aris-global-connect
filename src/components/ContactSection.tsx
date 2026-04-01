@@ -24,7 +24,7 @@ export default function ContactSection() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground mb-1">{d.label}</p>
                 {d.href ? (
-                  <a href={d.href} className="text-foreground hover:text-foreground/70 transition-colors text-sm" target={d.label === "Website" ? "_blank" : undefined} rel={d.label === "Website" ? "noopener noreferrer" : undefined}>
+                  <a href={d.href} className="text-foreground hover:text-foreground/70 transition-colors text-sm whitespace-pre-line" target={d.label === "Website" ? "_blank" : undefined} rel={d.label === "Website" ? "noopener noreferrer" : undefined}>
                     {d.value}
                   </a>
                 ) : (
