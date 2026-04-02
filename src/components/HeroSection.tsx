@@ -3,7 +3,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 export default function HeroSection() {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden">
-      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover" width={1920} height={1080} />
+      <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover animate-[hero-ken-burns_25s_ease-in-out_infinite_alternate]" width={1920} height={1080} />
       <div className="absolute inset-0 bg-navy/85" />
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center py-40">
         <p className="text-[13px] font-medium tracking-[0.2em] uppercase text-primary-foreground/50 mb-6 animate-fade-up">
