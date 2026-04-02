@@ -117,16 +117,6 @@
   100% { transform: scale(1.15) translate(-2%, -1%); }
 }
 
-@keyframes node-blink {
-  0%, 100% { opacity: 0.3; }
-  50% { opacity: 0.9; }
-}
-
-@keyframes node-float {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(8px, -6px); }
-}
-
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
