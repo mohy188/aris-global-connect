@@ -25,7 +25,7 @@ export default function Navbar() {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border" : "bg-transparent"}`}>
       <div className="max-w-6xl mx-auto px-6 lg:px-8 flex items-center justify-between h-20">
         <a href="#" className="flex items-center gap-2">
-          <img src={logo} alt="ARIS & Company" className={`w-[160px] h-auto transition-all duration-300 ${scrolled ? "" : "invert"}`} />
+          <img src={logo} alt="ARIS & Company" className={`w-[160px] h-auto transition-all duration-300 ${scrolled ? "invert" : ""}`} />
         </a>
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
