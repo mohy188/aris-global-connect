@@ -121,6 +121,27 @@
   to { opacity: 1; }
 }
 
+@keyframes light-sweep {
+  0% { transform: translateX(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateX(200%); opacity: 0; }
+}
+
+.hero-light-sweep {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    oklch(1 0 0 / 0.03) 20%,
+    oklch(1 0 0 / 0.08) 40%,
+    oklch(1 0 0 / 0.12) 50%,
+    oklch(1 0 0 / 0.08) 60%,
+    oklch(1 0 0 / 0.03) 80%,
+    transparent 100%
+  );
+  animation: light-sweep 4s ease-in-out infinite;
+}
+
 .animate-fade-up {
   animation: fade-up 0.6s ease-out both;
 }
