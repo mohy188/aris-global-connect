@@ -42,9 +42,9 @@ export default function NetworkBackground() {
         nodes.push({
           x: Math.random() * w,
           y: Math.random() * h,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          radius: Math.random() * 1.5 + 1,
+          vx: (Math.random() - 0.5) * 0.75,
+          vy: (Math.random() - 0.5) * 0.75,
+          radius: Math.random() * 1.8 + 1.9,
           opacity: Math.random() * 0.5 + 0.2,
           pulseSpeed: Math.random() * 0.02 + 0.005,
           pulsePhase: Math.random() * Math.PI * 2,
@@ -56,11 +56,12 @@ export default function NetworkBackground() {
     resize();
     window.addEventListener("resize", resize);
 
-    const connectionDistance = 150;
+    const connectionDistance = 190;
 
     const animate = (time: number) => {
       const { w, h } = dimensionsRef.current;
       const nodes = nodesRef.current;
+      const brightnessPulse = 0.9 + Math.sin(time * 0.0026) * 0.3;
       ctx.clearRect(0, 0, w, h);
 
       // Update positions
@@ -69,7 +70,7 @@ export default function NetworkBackground() {
         node.y += node.vy;
         if (node.x < 0 || node.x > w) node.vx *= -1;
         if (node.y < 0 || node.y > h) node.vy *= -1;
-        node.opacity = 0.2 + Math.sin(time * node.pulseSpeed + node.pulsePhase) * 0.3 + 0.3;
+        node.opacity = 0.72 + Math.sin(time * node.pulseSpeed + node.pulsePhase) * 0.22;
       }
 
       // Draw connections
@@ -79,12 +80,14 @@ export default function NetworkBackground() {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < connectionDistance) {
-            const alpha = (1 - dist / connectionDistance) * 0.15;
+            const alpha = Math.min((1 - dist / connectionDistance) * 0.8 * brightnessPulse, 1);
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
             ctx.strokeStyle = `rgba(255, 255, 255, ${alpha})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 1.2 + brightnessPulse * 1;
+            ctx.lineCap = "round";
+            ctx.lineJoin = "round";
             ctx.stroke();
           }
         }
@@ -95,13 +98,13 @@ export default function NetworkBackground() {
         // Glow
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius * 3, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${node.opacity * 0.08})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(node.opacity * 0.85 * brightnessPulse, 1)})`;
         ctx.fill();
 
         // Core
         ctx.beginPath();
         ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${node.opacity})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${Math.min(node.opacity * (1.3 + brightnessPulse * 0.55), 1)})`;
         ctx.fill();
       }
 
