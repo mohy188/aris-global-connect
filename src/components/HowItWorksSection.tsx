@@ -7,20 +7,28 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="how-it-works" className="py-28 bg-surface">
-      <div className="max-w-5xl mx-auto px-6 lg:px-8">
+    <section id="how-it-works" className="py-32 bg-surface">
+      <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-20">
           <p className="text-[13px] font-medium tracking-[0.2em] uppercase text-muted-foreground mb-4">How It Works</p>
           <h2 className="text-3xl sm:text-4xl font-semibold text-foreground tracking-tight">Simple & Efficient Process</h2>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
-          {steps.map((s) => (
-            <div key={s.num} className="text-center">
-              <span className="text-5xl font-extralight text-foreground/10 block mb-4">{s.num}</span>
-              <h3 className="text-base font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground text-[14px] leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
+
+        <div className="relative">
+          {/* Connecting line */}
+          <div className="hidden lg:block absolute top-10 left-[calc(12.5%+28px)] right-[calc(12.5%+28px)] h-px bg-border" />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-0">
+            {steps.map((s) => (
+              <div key={s.num} className="relative p-8 md:p-10 border border-border group hover:bg-background transition-colors duration-500 text-center">
+                <div className="relative z-10 w-14 h-14 mx-auto border border-border flex items-center justify-center mb-6 bg-surface group-hover:bg-foreground group-hover:text-background transition-all duration-400">
+                  <span className="text-sm font-semibold">{s.num}</span>
+                </div>
+                <h3 className="text-[15px] font-semibold text-foreground mb-3">{s.title}</h3>
+                <p className="text-muted-foreground text-[13.5px] leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
