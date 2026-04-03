@@ -75,9 +75,9 @@ export default function ContactSection() {
                   <d.icon className="w-5 h-5 text-background/30 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-background/30 mb-1.5">{d.label}</p>
-                    {"lines" in d ? (
+                    {"lines" in d && d.lines ? (
                       <div className="space-y-1">
-                        {d.lines.map((line) => (
+                        {d.lines.map((line: { display: string; href: string }) => (
                           <a key={line.href} href={line.href} className="block text-background/80 hover:text-background transition-colors text-[14px]">
                             {line.display}
                           </a>
